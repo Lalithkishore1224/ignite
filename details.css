@@ -135,17 +135,4 @@ body {
     }
 }
 /* LinkedIn Icon */
-.linkedin-icon {
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.linkedin-icon img {
-    width: 30px; /* Adjust size */
-    height: 30px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.linkedin-icon img:hover {
-    transform: scale(1.2);
-}
+.
