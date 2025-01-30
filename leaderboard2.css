@@ -1,10 +1,22 @@
 /* General Styles */
+
+
+
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Playfair Display', sans-serif;
+    background-color:white;
 }
+
+
+
+
+
+
+
 
 /* Main Leaderboard Container - Full Width */
 .leaderboard-container {
@@ -18,20 +30,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    position: relative;
-    background: linear-gradient(to right, #222, #444);
+   position: relative;
+    background-color: #FD748C;
+   
     padding: 60px 20px;
     border-radius: 10px;
     color: white;
     width: 100%;
     height: 250px;
+    
 }
+
+
 
 /* Leaderboard Logos */
 .leaderboard-logo {
     position: absolute;
     width: 60px;
     height: auto;
+    border-radius: 0; /* Make logo square by removing border radius */
+    border: none; /* Remove any border */
 }
 
 /* Logo in Top-Left Corner */
@@ -46,6 +64,14 @@ body {
     right: 35px;
 }
 
+/* Profile Images (Top-Three Section) */
+.top-three img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular border for profile images */
+    border: 3px solid white;
+}
+
 /* Individual positions */
 .top-three div {
     text-align: center;
@@ -56,7 +82,7 @@ body {
 
 /* First place - Center and Higher */
 .first {
-    top: 20px;
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
     padding: 30px;
@@ -64,13 +90,13 @@ body {
 
 /* Second place - Bottom Left */
 .second {
-    bottom: 20px;
+    bottom: 0px;
     left: 20%;
 }
 
 /* Third place - Bottom Right */
 .third {
-    bottom: 20px;
+    bottom: 0px;
     right: 20%;
 }
 
@@ -107,9 +133,24 @@ tr:nth-child(even) {
 }
 
 /* Hover Effect */
+
+/* Hover Effect */
+tr {
+    transition: transform 1s, background 0.3s;
+}
+
 tr:hover {
-    background: #96f198;
-    transition: 0.3s;
+    background:  #FDA7B7;
+    transform: scale(1.10); /* Zoom effect */
+}
+
+/* Optional: To ensure the rank section scales as well, ensure it inherits */
+.rank-section {
+    transition: transform 0.3s;
+}
+
+tr:hover .rank-section {
+    transform: scale(1.05); /* Zoom effect for the rank section */
 }
 
 /* Profile Styling */
@@ -125,39 +166,78 @@ tr:hover {
     border-radius: 50%;
     border: 2px solid #444;
 }
-/* Responsive Design for Mobile */
-/* Responsive Design for Mobile */
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    /* Stack the top-three winners vertically */
+@media (max-width: 768px) { 
+    /* Ensure the top-three section is fully centered and background is increased */
     .top-three {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: auto;
-        padding: 20px 10px;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        min-height: 120vh; /* Increased height to accommodate medal and background */
+        padding: 50px 10px; /* Increase padding for more space */
+        background-color: #FD748C !important;
+        width: 340px; /* Set the background width */
+        border-radius: 10px;
+        position: relative;
+        text-align: center; /* Ensures text is centered */
     }
 
-    /* Make each winner appear one below the other */
+    /* Ensure each winner (1st, 2nd, 3rd) is fully centered */
     .first, .second, .third {
-        position: static;
+        position: relative !important;
         width: 90%;
         text-align: center;
+        padding: 20px;
         margin-bottom: 15px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content inside each winner */
+        justify-content: center; /* Ensures content is vertically centered */
     }
 
-    /* Ensure images are smaller for better mobile fit */
+    /* Fix for second place - center it and adjust position */
+    .second {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 100px; /* Adjusted margin for spacing */
+    }
+
+    /* Fix for third place - center it */
+    .third {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 40px; /* Adjust margin so it fits within the increased background */
+    }
+
+    /* Profile images */
     .top-three img {
-        width: 70px;
-        height: 70px;
+        width: 85px;
+        height: 85px;
     }
 
-    /* Move the leaderboard table below the top-three section */
+    /* Move leaderboard table below the top-three section */
+    .leaderboard-container {
+        margin-top: 40px; /* Increased top margin to move table down */
+        width: 100%;
+    }
+
+    /* Ensure table is scrollable if necessary */
     table {
-        margin-top: 20px;
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+    }
+
+    /* Adjust text size for better readability */
+    .name, .points, .rank {
+        font-size: 1rem;
+    }
+
+    /* Reduce padding for better fit */
+    th, td {
+        padding: 12px;
     }
 }
+
+
