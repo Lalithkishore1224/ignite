@@ -31,8 +31,7 @@ body {
     justify-content: center;
     align-items: flex-end;
    position: relative;
-    background-color: #FD748C;
-   
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
     padding: 60px 20px;
     border-radius: 10px;
     color: white;
