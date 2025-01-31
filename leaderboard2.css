@@ -168,7 +168,7 @@ tr:hover .rank-section {
 /* Force Desktop View on Mobile - More Zoomed Out & Left-Aligned */
 @media (max-width: 768px) { 
     body {
-        zoom: 0.4; /* Zoom out for more content */
+        zoom: 0.51; /* Zoom out for more content */
         transform: scale(0.6);
         transform-origin: top left; /* Align content to the left */
         width: 1300px; /* Ensure desktop width */
