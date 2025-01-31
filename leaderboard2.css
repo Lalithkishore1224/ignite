@@ -139,7 +139,7 @@ tr {
 }
 
 tr:hover {
-    background:  #FDA7B7;
+    background:  linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
     transform: scale(1.10); /* Zoom effect */
 }
 
